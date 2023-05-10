@@ -4,6 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.*;
+import org.junit.jupiter.params.shadow.com.univocity.parsers.annotations.NullString;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -62,5 +63,16 @@ class WordReverserTest {
         //then
         assertFalse(result);
     }
+
+    @ParameterizedTest
+    @NullSource
+    void shouldReturnFalseWhenCheckingIfNullIsAPalindromeParameterizedTest(String nullString) {
+        //when
+        boolean result = wordReverser.isPalindrome(nullString);
+
+        //then
+        assertFalse(result);
+    }
+
 
 }

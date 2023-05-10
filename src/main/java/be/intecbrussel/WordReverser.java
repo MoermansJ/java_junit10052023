@@ -6,7 +6,7 @@ public class WordReverser {
     }
 
     public boolean isPalindrome(String wordToCheck) {
-        if (wordToCheck.isBlank()) {
+        if (wordToCheck == null || wordToCheck.isBlank()) {
             return false;
         }
 
